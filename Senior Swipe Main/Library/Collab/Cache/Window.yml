@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - Assets/Materials/SlippySlime 1.mat
+    - Assets/Materials/SlippySlime 1.mat.meta
+    - Assets/Prefabs/Balloon Robot.prefab
+    - Assets/Prefabs/Slippy Slime Splat.prefab
+    - Assets/Prefabs/Slippy Slime Splat.prefab.meta
+    - Assets/Prefabs/Sticky Slime Splat 1.prefab
+    - Assets/Prefabs/Sticky Slime Splat 1.prefab.meta
+    - Assets/Prefabs/Wall Obstical.prefab
+    - Assets/Prefabs/Wall Tile Base.prefab
+    - Assets/Prefabs/Wall Tile Base.prefab.meta
+    - Assets/Prefabs/Wall Tile.prefab
+    - Assets/Prefabs/Wall Tile.prefab.meta
+    - Assets/Scenes/MovementPrototype.unity
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (1) 1.asset
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (1) 1.asset.meta
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (1) 2.asset
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (1) 2.asset.meta
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (7).asset
+    - Assets/Scenes/MovementPrototype/NavMesh-Cube (7).asset.meta
+    - Assets/Scenes/MovementPrototype/NavMesh-Mesh 1.asset
+    - Assets/Scenes/MovementPrototype/NavMesh-Mesh 1.asset.meta
+    - Assets/Scenes/Randall Prototype.meta
+    - Assets/Scenes/Randall Prototype.unity
+    - Assets/Scenes/Randall Prototype.unity.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (1) 1.asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (1) 1.asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (1).asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (1).asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (12) 1.asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (12) 1.asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (12).asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Cube (12).asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-GameObject.asset
+    - Assets/Scenes/Randall Prototype/NavMesh-GameObject.asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Walls (1).asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Walls (1).asset.meta
+    - Assets/Scenes/Randall Prototype/NavMesh-Walls.asset
+    - Assets/Scenes/Randall Prototype/NavMesh-Walls.asset.meta
+    - Assets/Scripts/AI General/Behaviours/SitOnButtonBehaviour.cs
+    - Assets/Scripts/AI General/DetectTargetLOS.cs
+    - Assets/Scripts/AI General/LOSLaser.cs
+    - Assets/Scripts/AI General/LOSLaser.cs.meta
+    - Assets/Scripts/Gadgets/Fire Systems/IFireSystem.cs
+    - Assets/Scripts/Gadgets/Fire Systems/ParticleWeapon.cs
+    - Assets/Scripts/Gadgets/RotateGadget.cs
+    - Assets/Scripts/Gadgets/Slime/OrientSplat.cs
+    - Assets/Scripts/Gadgets/Slime/OrientSplat.cs.meta
+    - Assets/Scripts/Gadgets/Slime/SlippySlime.cs
+    - Assets/Scripts/Gadgets/Slime/SlippySlime.cs.meta
+    - Assets/Scripts/Gadgets/Slime/SpawnSplat.cs
+    - Assets/Scripts/Gadgets/Slime/SpawnSplat.cs.meta
+    - Assets/Scripts/Gadgets/Slime/StickParticlesToWalls.cs
+    - Assets/Scripts/Gadgets/Slime/StickySlime.cs
+    - Assets/Scripts/Puzzle Components/Trap Door.meta
+    - Assets/Scripts/Puzzle Components/Trap Door/TrapDoor.cs
+    - Assets/Scripts/Puzzle Components/Trap Door/TrapDoor.cs.meta
+    - ProjectSettings/DynamicsManager.asset
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/TagManager.asset
+    - 
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0
