@@ -6,7 +6,9 @@ public class StoreCatSingleton : MonoBehaviour
 {
     public bool catIsLaunched;
 
-    public GameObject cat { get; set; }
+    public GameObject catMain { get; set; }
+
+    public GameObject catProj { get; set; }
 
 
 

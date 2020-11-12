@@ -20,6 +20,8 @@ public class PlayerHealth : MonoBehaviour, IDamageableByEnemy<float>
 
     [SerializeField] public HealthChangedEvent onHealthChanged;
 
+    [SerializeField] public HealthChangedEvent onDamaged;
+
     [System.Serializable]
     public class PlayerDiedEvent : UnityEvent { }
 
@@ -46,7 +48,7 @@ public class PlayerHealth : MonoBehaviour, IDamageableByEnemy<float>
         {
             Debug.Log("Player Hit");
             m_currentHealth -= damageTaken;
-            onHealthChanged.Invoke(m_currentHealth, m_maxHealth);
+            onDamaged.Invoke(m_currentHealth, m_maxHealth);
             StartCoroutine(InvincibilityTime());
             if (m_currentHealth <= 0)
             {

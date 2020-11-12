@@ -38,11 +38,11 @@ public class OrientSplat : MonoBehaviour
         //}
         //Debug.DrawRay(transform.position, (transform.position + _point), Color.green, 100);
 
-        hitObjects = Physics.OverlapSphere(transform.position, 1f, environmentLayers);
+        hitObjects = Physics.OverlapSphere(transform.position, 0.2f, environmentLayers);
         if (hitObjects.Length > 0)
         {
-            var direction = (transform.position - hitObjects[0].transform.position).normalized;
-            if (Physics.Raycast(transform.position, -direction, out hit, 1f, environmentLayers))
+            var direction = (transform.position - hitObjects[0].transform.position);
+            if (Physics.Raycast(transform.position, -direction, out hit, 3f, environmentLayers))
             {
                 Debug.DrawRay(transform.position, -direction, Color.green, 100);
                 normal = hit.normal.normalized;

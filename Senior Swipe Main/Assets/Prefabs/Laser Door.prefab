@@ -525,7 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4973981291861803084}
   - component: {fileID: 4973981291861803087}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,6 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e24c5f86fab9c6459162296eda53a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonsToUnlock: 2
   onDoorUnlocked:
     m_PersistentCalls:
       m_Calls:

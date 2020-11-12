@@ -11,9 +11,23 @@ public class PlayerJump : MonoBehaviour
 
     [SerializeField] private float m_lowJumpMulti;
 
-    private bool m_canJump = true;
+    [SerializeField] private Collider collider;
+
+    [SerializeField] private LayerMask groundLayers;
+
+    private float m_jumpMulti = 1;
+
+    public float JumpMulti { get => m_jumpMulti; set => m_jumpMulti = value; }
+
+
+    private float m_jumpDelay = 0;
+
+    public float JumpDelay { get => m_jumpDelay; set => m_jumpDelay = value; }
+
+    private bool wasJumping;
 
     private Rigidbody m_rb;
+
 
     [System.Serializable]
     public class PlayerMovementEvent : UnityEvent { }
@@ -28,50 +42,53 @@ public class PlayerJump : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        CheckGrounded();
+        if(wasJumping && IsGrounded())
+        { 
+            wasJumping = false;
+            onLanded.Invoke();
+        }
+    }
+
     private void FixedUpdate()
     {
-        if (m_rb.velocity.y < 0 && m_canJump == false)
+        
+        if (m_rb.velocity.y < 0 && !IsGrounded())
         {
             m_rb.AddForce(Vector3.up * Physics.gravity.y * (m_fallMulti - 1));
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void CheckGrounded()
     {
-        if (collision.gameObject.CompareTag("Ground or Wall"))
-        {
-            m_canJump = true;
-            onLanded?.Invoke();
-        }
+
     }
 
-    private void OnCollisionExit(Collision collision)
+    private bool IsGrounded()
     {
-        if (collision.gameObject.CompareTag("Ground or Wall"))
-        {
-            m_canJump = false;
-        }
-    }
 
+        Collider[] cols = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, Quaternion.identity, groundLayers);
+        return cols.Length > 0;
 
-
-    private bool CheckIfGrounded()
-    {
-        return true;
     }
 
     public void OnJump()
     {
-        if(m_canJump)
+        if(IsGrounded())
         {
-            Jump();
+            StartCoroutine(Jump());
         }
     }
 
-    public void Jump()
+    public IEnumerator Jump()
     {
-        m_rb.AddForce(Vector3.up * m_jumpForce, ForceMode.VelocityChange);
-        m_canJump = false;
+        
+        yield return new WaitForSeconds(m_jumpDelay);
+        m_rb.AddForce(Vector3.up * m_jumpForce * m_jumpMulti, ForceMode.VelocityChange);  
         onJump?.Invoke();
+        yield return new WaitForSeconds(0.1f);
+        wasJumping = true;
     }
 }

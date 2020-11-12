@@ -43,10 +43,20 @@ public class FireRug : MonoBehaviour
         fireCollider.SetActive(true);
     }
 
-    //private IEnumerator RemoveAfterSeconds()
-    //{
-    //    yield return new WaitForSeconds(r_sizzleTime);
-    //    r_cantBeBurned = true;
-    //    Destroy(this.gameObject);
-    //}
+    public void StopFire()
+    {
+        foreach (ParticleSystem _part in r_particles)
+        {
+            r_startTime = Time.time;
+            _part.Stop();
+        }
+        fireCollider.SetActive(false);
+        StartCoroutine(RemoveAfterSeconds());
+    }
+
+    private IEnumerator RemoveAfterSeconds()
+    {
+        yield return new WaitForSeconds(r_sizzleTime);
+        r_cantBeBurned = true;
+    }
 }

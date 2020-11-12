@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4951905191422662764}
   - component: {fileID: 4951905191422662766}
   - component: {fileID: 4951905191422662765}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cat Sit Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4951905192354470979}
   - component: {fileID: 4951905192354470978}
   - component: {fileID: 4951905192354470977}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4951905192875743004}
   - component: {fileID: 4951905192875743003}
   - component: {fileID: 4951905192875743002}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cylinder
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4951905192918407141}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4951905193024024157}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 4951905193358238101}
   - component: {fileID: 4951905193358238100}
   - component: {fileID: 4951905193358238099}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Single Press Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,22 +406,22 @@ MonoBehaviour:
   onButtonUnpressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4951905193358238100}
-        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
-        m_MethodName: SetAnimState
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: Unpress
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaserDoor, Assembly-CSharp
         m_MethodName: Lock
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4951905193358238100}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: SetAnimState
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 8485950324932884179}
   - component: {fileID: 8485950324932884178}
   - component: {fileID: 8485950324932884177}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 8485950325471503436}
   - component: {fileID: 8485950325471503435}
   - component: {fileID: 8485950325471503434}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 8485950325848964107}
   - component: {fileID: 8485950325848964106}
   - component: {fileID: 8485950325848964105}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 8485950326092207905}
   - component: {fileID: 8485950326092207904}
   - component: {fileID: 8485950326092207935}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

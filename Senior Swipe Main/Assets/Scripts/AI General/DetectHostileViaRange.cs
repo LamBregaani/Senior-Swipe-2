@@ -33,12 +33,17 @@ public class DetectHostileViaRange : MonoBehaviour
 
         foreach (var target in m_hostiles)
         {
-            if (Vector3.Distance(transform.position, target.transform.position) < m_range)
+            if (Vector3.Distance(transform.position, target.transform.position) < m_range && target.transform.root.GetComponentInChildren<AIState>()?.currentState != AIState.State.Stunned)
             {
                 m_storeHostile.hostile = target.gameObject;
                 break;
             }
+            else
+            {
+                m_storeHostile.hostile = null;
+            }
         }
+
 
 
 
