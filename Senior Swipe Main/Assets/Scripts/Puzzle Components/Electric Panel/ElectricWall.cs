@@ -11,6 +11,8 @@ public class ElectricWall : MonoBehaviour, IAffectableByLaserPointer
 
     [SerializeField] private ParticleSystem[] w_particles;
 
+    [SerializeField] private GameObject forceField;
+
     private bool r_canBeActivated = true;
 
     private bool r_isShocking;
@@ -46,15 +48,18 @@ public class ElectricWall : MonoBehaviour, IAffectableByLaserPointer
             r_canBeActivated = false;
         }
         onActivated?.Invoke();
+        StartCoroutine(FenceCooldown());
     }
 
     private IEnumerator FenceCooldown()
     {
+        forceField.SetActive(true);
         foreach (ParticleSystem _part in w_particles)
         {
-            yield return new WaitForSeconds(r_coolDownTime);
             _part.Stop();
             r_canBeActivated = true;
         }
+        yield return new WaitForSeconds(r_coolDownTime);
+        forceField.SetActive(false);
     }
 }

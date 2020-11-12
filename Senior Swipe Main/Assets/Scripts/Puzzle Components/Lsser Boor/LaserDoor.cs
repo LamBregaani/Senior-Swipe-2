@@ -5,6 +5,12 @@ using UnityEngine.Events;
 
 public class LaserDoor : MonoBehaviour
 {
+    [SerializeField] private int buttonsToUnlock;
+
+    [SerializeField] private bool autoRelock;
+
+    private int currentButtons;
+
     private float m_laserLength;
 
     private bool m_isUnLocked;
@@ -30,7 +36,9 @@ public class LaserDoor : MonoBehaviour
 
     public void Unlock()
     {
-        if(!m_isUnLocked)
+        currentButtons++;
+
+        if(!m_isUnLocked && currentButtons >= buttonsToUnlock)
         {
             m_isUnLocked = true;
             onDoorUnlocked.Invoke();
@@ -41,7 +49,9 @@ public class LaserDoor : MonoBehaviour
 
     public void Lock()
     {
-        if (m_isUnLocked)
+        currentButtons--;
+
+        if (m_isUnLocked && currentButtons < buttonsToUnlock && autoRelock)
         {
             m_isUnLocked = false;
             onDoorLocked.Invoke();

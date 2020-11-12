@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAnimController : MonoBehaviour
 {
+
+
     private Animator m_anim;
 
     private void Awake()
@@ -14,11 +16,13 @@ public class PlayerAnimController : MonoBehaviour
     public void SetAnimState(int value)
     {
         m_anim.SetInteger("Animation State", value);
-        /*if (value == 0)
-        {
-            m_anim.Stop();
-        }
-        else
-            m_anim.Play();*/
+
+    }
+
+    public void SetAnimBool(bool value)
+    {
+        m_anim.SetBool("In Air", value);
     }
 }
+
+

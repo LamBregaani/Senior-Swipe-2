@@ -10,7 +10,9 @@ public class SpawnCat : MonoBehaviour
     {
         var catClone = Instantiate(m_cat, transform.position, transform.rotation);
 
-        StoreCatSingleton.instance.cat = catClone;
+        StoreCatSingleton.instance.catProj = null;
+
+        StoreCatSingleton.instance.catMain = catClone;
 
         Destroy(this.gameObject);
     }

@@ -19,8 +19,11 @@ public class StunnedBehviour : AIBehaviour, IAffectableByLaserPointer
 
     private Coroutine stunTimeCoroutine;
 
+    private AIState aiState;
+
     override public void Awake()
     {
+        aiState = GetComponent<AIState>();
         m_agent = GetComponentInParent<NavMeshAgent>();
         GetAIController();
     }
@@ -29,6 +32,7 @@ public class StunnedBehviour : AIBehaviour, IAffectableByLaserPointer
     {
         if(Time.time > m_startTime + m_stunTime)
         {
+            aiState.currentState = AIState.State.Active;
             m_agent.isStopped = false;
             RemoveFromAIController();
             StartCoroutine(StunCooldown());
@@ -47,6 +51,7 @@ public class StunnedBehviour : AIBehaviour, IAffectableByLaserPointer
         {
             m_startTime = Time.time;
             AddToAIController();
+            aiState.currentState = AIState.State.Stunned;
             m_canBeStunned = false;
             m_agent.isStopped = true;
         }
