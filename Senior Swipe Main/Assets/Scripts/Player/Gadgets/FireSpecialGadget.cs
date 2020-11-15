@@ -7,7 +7,11 @@ public class FireSpecialGadget : MonoBehaviour
 {
     private bool m_firing;
 
+    [SerializeField]private bool toggleFire = true;
+
     private Gadget m_currentGadget;
+
+    
 
     private IEnumerator Start()
     {
@@ -21,14 +25,27 @@ public class FireSpecialGadget : MonoBehaviour
     {
         if (context.started)
         {
-            m_firing = true;
-            m_currentGadget.IsFiring(m_firing);
+            if(!toggleFire)
+            {
+                m_firing = true;
+                m_currentGadget.IsFiring(m_firing);
+            }
+            else
+            {
+                m_firing = !m_firing;
+                m_currentGadget.IsFiring(m_firing);
+            }
+
 
         }
         else if (context.canceled)
         {
-            m_firing = false;
-            m_currentGadget.IsFiring(m_firing);
+            if(!toggleFire)
+            {
+                m_firing = false;
+                m_currentGadget.IsFiring(m_firing);
+            }
+
         }
     }
 
