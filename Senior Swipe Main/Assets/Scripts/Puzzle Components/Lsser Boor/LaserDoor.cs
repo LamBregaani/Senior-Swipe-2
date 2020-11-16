@@ -18,8 +18,6 @@ public class LaserDoor : MonoBehaviour
     private LineRenderer[] m_lasers;
 
 
-
-
     [System.Serializable]
     public class DoorUnlockedEvent : UnityEvent { }
 
