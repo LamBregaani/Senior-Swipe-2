@@ -48,6 +48,7 @@ public class LaserPointer : MonoBehaviour, IFireSystem
 
     public void Fire()
     {
+        
         m_lineRenderer.SetPosition(0, firePoint.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(firePoint.transform.position, transform.forward, out hit, Mathf.Infinity, mask))

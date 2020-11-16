@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4128632656172787100}
   m_Layer: 20
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground or Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bd4e4246c9e0f84093ce0f4d173f5df, type: 2}
+  - {fileID: 2100000, guid: 87581ae584485fc4f983afc51eb44c18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
