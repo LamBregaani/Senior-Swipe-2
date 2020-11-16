@@ -13,9 +13,15 @@ public class IsCatLaunched : MonoBehaviour, IFireCondition
 
     public void CheckIfFireable(ref bool _fire)
     {
-        if(!CatIsLaunched() || StoreCatSingleton.instance.cat == null)
+        if (CatIsLaunched())
         {
-            _fire = false;
+            if (StoreCatSingleton.instance.catMain == null && StoreCatSingleton.instance.catProj == null)
+            {
+                _fire = false;
+            }
+               
         }
+        else
+            _fire = false;
     }
 }

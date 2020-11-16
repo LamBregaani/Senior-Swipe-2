@@ -89,6 +89,14 @@ public class @Player : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""74e84292-32f7-4fb6-9ee1-896f9f2b0531"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -240,7 +248,7 @@ public class @Player : IInputActionCollection, IDisposable
                     ""id"": ""5366262c-0398-4e24-a5fa-2d7908ca34cb"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Camera Movement"",
                     ""isComposite"": false,
@@ -251,7 +259,7 @@ public class @Player : IInputActionCollection, IDisposable
                     ""id"": ""5506bf57-7308-4525-8bdd-b4a8dfd28ab0"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Camera Movement"",
                     ""isComposite"": false,
@@ -262,7 +270,7 @@ public class @Player : IInputActionCollection, IDisposable
                     ""id"": ""3d6971f0-c507-40d7-a093-8fd3fb51d432"",
                     ""path"": ""<XInputController>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Camera Movement"",
                     ""isComposite"": false,
@@ -474,6 +482,17 @@ public class @Player : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""First Person Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7c1c4df-f9d6-47d9-a79e-67c558f0e549"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -999,6 +1018,7 @@ public class @Player : IInputActionCollection, IDisposable
         m_MainControls_SwitchGadgets = m_MainControls.FindAction("Switch Gadgets", throwIfNotFound: true);
         m_MainControls_LaserPointerFire = m_MainControls.FindAction("Laser Pointer Fire", throwIfNotFound: true);
         m_MainControls_FirstPersonMode = m_MainControls.FindAction("First Person Mode", throwIfNotFound: true);
+        m_MainControls_Reset = m_MainControls.FindAction("Reset", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1069,6 +1089,7 @@ public class @Player : IInputActionCollection, IDisposable
     private readonly InputAction m_MainControls_SwitchGadgets;
     private readonly InputAction m_MainControls_LaserPointerFire;
     private readonly InputAction m_MainControls_FirstPersonMode;
+    private readonly InputAction m_MainControls_Reset;
     public struct MainControlsActions
     {
         private @Player m_Wrapper;
@@ -1082,6 +1103,7 @@ public class @Player : IInputActionCollection, IDisposable
         public InputAction @SwitchGadgets => m_Wrapper.m_MainControls_SwitchGadgets;
         public InputAction @LaserPointerFire => m_Wrapper.m_MainControls_LaserPointerFire;
         public InputAction @FirstPersonMode => m_Wrapper.m_MainControls_FirstPersonMode;
+        public InputAction @Reset => m_Wrapper.m_MainControls_Reset;
         public InputActionMap Get() { return m_Wrapper.m_MainControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1118,6 +1140,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @FirstPersonMode.started -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnFirstPersonMode;
                 @FirstPersonMode.performed -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnFirstPersonMode;
                 @FirstPersonMode.canceled -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnFirstPersonMode;
+                @Reset.started -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnReset;
+                @Reset.performed -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnReset;
+                @Reset.canceled -= m_Wrapper.m_MainControlsActionsCallbackInterface.OnReset;
             }
             m_Wrapper.m_MainControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1149,6 +1174,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @FirstPersonMode.started += instance.OnFirstPersonMode;
                 @FirstPersonMode.performed += instance.OnFirstPersonMode;
                 @FirstPersonMode.canceled += instance.OnFirstPersonMode;
+                @Reset.started += instance.OnReset;
+                @Reset.performed += instance.OnReset;
+                @Reset.canceled += instance.OnReset;
             }
         }
     }
@@ -1269,6 +1297,7 @@ public class @Player : IInputActionCollection, IDisposable
         void OnSwitchGadgets(InputAction.CallbackContext context);
         void OnLaserPointerFire(InputAction.CallbackContext context);
         void OnFirstPersonMode(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

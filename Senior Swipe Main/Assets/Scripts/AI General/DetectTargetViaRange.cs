@@ -13,6 +13,8 @@ public class DetectTargetViaRange : MonoBehaviour
 
     [SerializeField] private float rotateSpeed;
 
+    private AIState m_state;
+
     private StoreTarget storeTarget;
 
     private Collider[] targets;
@@ -26,6 +28,7 @@ public class DetectTargetViaRange : MonoBehaviour
 
     private void Awake()
     {
+        m_state = GetComponentInChildren<AIState>();
         storeTarget = GetComponentInChildren<StoreTarget>();
         if (updateTargets)
             InvokeRepeating("FindTargets", 0, 0.5f);
@@ -41,16 +44,26 @@ public class DetectTargetViaRange : MonoBehaviour
     private void CheckDistance()
     {
 
-        foreach (var target in targets)
+        if (targets.Length > 0 && m_state.currentState == AIState.State.Active)
         {
-            if (Vector3.Distance(transform.position, target.transform.position) < range)
+            foreach (var target in targets)
             {
-                RotateToTarget(target.transform);
-                onTargetFound?.Invoke();
-                storeTarget.target = target.gameObject;
-                break;
+                if (Vector3.Distance(transform.position, target.transform.position) < range)
+                {
+                    RotateToTarget(target.transform);
+                    onTargetFound?.Invoke();
+                    storeTarget.target = target.gameObject;
+                    break;
+                }
             }
         }
+        else
+        {
+            storeTarget.target = null;
+        }
+        
+
+
         
 
         
@@ -83,6 +96,7 @@ public class DetectTargetViaRange : MonoBehaviour
     {
         //if(storeTarget.target = null)
         //{
+        
             targets = Physics.OverlapSphere(transform.position, 1000, targetLayers);
         //}
 

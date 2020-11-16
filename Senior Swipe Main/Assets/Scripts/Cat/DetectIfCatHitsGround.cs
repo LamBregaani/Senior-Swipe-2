@@ -10,12 +10,21 @@ public class DetectIfCatHitsGround : MonoBehaviour
 
     [SerializeField] public GroundHitEvent onGroundHit;
 
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(3);
+        
+        StoreCatSingleton.instance.catProj = this.gameObject;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Ground or Wall"))
         {
-            onGroundHit?.Invoke();
+            if (StoreCatSingleton.instance.catMain == null)
+                onGroundHit?.Invoke();
+            else
+                Destroy(this.gameObject);
         }
     }
 }

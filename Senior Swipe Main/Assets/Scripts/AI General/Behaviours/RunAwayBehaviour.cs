@@ -34,6 +34,7 @@ public class RunAwayBehaviour : AIBehaviour
     override public void Behaviour()
     {
        
+
         float distance = Vector3.Distance(transform.position, destination);
         if (distance <= 3)
         {
