@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6145269812580224159}
   - component: {fileID: 6859446685059184765}
   - component: {fileID: 8838992480436782412}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2149219485131215507
 Transform:
@@ -108,12 +108,12 @@ GameObject:
   - component: {fileID: 1255388477176853174}
   - component: {fileID: 623798072058802540}
   - component: {fileID: 3781448428440758516}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8214146755555708576
 Transform:
@@ -201,12 +201,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2661507120349913062}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2661507120349913062
 Transform:

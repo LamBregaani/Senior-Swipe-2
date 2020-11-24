@@ -206,7 +206,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000019073486, y: -0.61, z: -0.000009536743}
+  m_ConnectedAnchor: {x: 0.000015258789, y: -0.61, z: -0.0000076293945}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -273,6 +273,11 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1226193376426502419, guid: bc7279d5af8bf4249982685f208cb835,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 117440311
+      objectReference: {fileID: 0}
     - target: {fileID: 1226193376561256406, guid: bc7279d5af8bf4249982685f208cb835,
         type: 3}
       propertyPath: m_Shadows.m_Type
@@ -292,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226193377007659290, guid: bc7279d5af8bf4249982685f208cb835,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 117440311
       objectReference: {fileID: 0}
     - target: {fileID: 1226193377138784200, guid: bc7279d5af8bf4249982685f208cb835,
         type: 3}

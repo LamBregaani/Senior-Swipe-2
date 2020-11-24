@@ -11,6 +11,8 @@ public class RunAwayWhenHitBehaviour : AIBehaviour, IAffectableByLaserPointer
 
     [SerializeField] private float m_coolDownTime;
 
+    [SerializeField] private GameObject m_runAwayPoint;
+
     private bool m_canBeStunned = true;
 
     private float m_startTime;
@@ -51,7 +53,7 @@ public class RunAwayWhenHitBehaviour : AIBehaviour, IAffectableByLaserPointer
         float distance = Vector3.Distance(transform.position, destination);
         if (distance <= 3)
         {
-            FindNewDestination();
+            //FindNewDestination();
         }
 
         m_agent.SetDestination(destination);
@@ -65,27 +67,28 @@ public class RunAwayWhenHitBehaviour : AIBehaviour, IAffectableByLaserPointer
 
     private void FindNewDestination()
     {
-        float radius = Random.Range(5, 10);
-        Vector3 randomDirection = Random.insideUnitSphere.normalized;
-        randomDirection += transform.position;
-        NavMeshHit hit;
-        destination = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
-        {
-            Debug.Log("Found");
-            destination = hit.position;
-        }
+        
+        //float radius = Random.Range(5, 10);
+        //Vector3 randomDirection = Random.insideUnitSphere.normalized;
+        //randomDirection += transform.position;
+        //NavMeshHit hit;
+        //destination = Vector3.zero;
+        //if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        //{
+        //    Debug.Log("Found");
+        //    destination = hit.position;
+        //}
     }
 
     public void LaserEffect()
     {
         if (m_canBeStunned)
         {
+            destination = m_runAwayPoint.transform.position;
             m_canBeStunned = false;
             m_startTime = Time.time;
             AddToAIController();
             aiState.currentState = AIState.State.Stunned;
-            m_agent.isStopped = true;
         }
     }
 

@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 303467608}
   - component: {fileID: 1610880913}
   m_Layer: 10
-  m_Name: AI Logic
+  m_Name: Balloon Robot AI Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

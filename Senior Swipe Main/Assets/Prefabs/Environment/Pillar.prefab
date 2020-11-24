@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4131651686899091934}
   - component: {fileID: 2211940423236287764}
   - component: {fileID: 2822144986224582149}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 410558089595247809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.6381583, y: -15.549999, z: 118.65}
-  m_LocalScale: {x: 70, y: 142.92186, z: 70.00012}
+  m_LocalScale: {x: 91.58098, y: 186.98466, z: 91.58114}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

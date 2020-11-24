@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3527771263469459280}
+  - component: {fileID: 3629293183504966758}
   m_Layer: 0
   m_Name: Window_UVed_2
   m_TagString: Untagged
@@ -114,6 +115,22 @@ Transform:
   m_Father: {fileID: 8262953558499565054}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &3629293183504966758
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4305153074904550890}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.015, y: 0.035, z: 0.005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.05, z: 0.03}
+  m_TimeToStationary: 0.5
 --- !u!1 &5217452033385393497
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +147,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5209247808436604244
 Transform:
@@ -306,7 +323,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8262953558499565054
 Transform:
@@ -342,7 +359,7 @@ GameObject:
   m_TagString: Ground or Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8437239360003050469
 Transform:

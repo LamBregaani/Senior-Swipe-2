@@ -8,15 +8,17 @@ public class SpawnSplat : MonoBehaviour
 
     [SerializeField] private GameObject[] splats;
 
-    private List<GameObject> spawnedSplats = new List<GameObject>();
+    private List<GameObject> m_spawnedSplats = new List<GameObject>();
 
     public void Spawn(Vector3 _point)
     {
-
+        //Used to allow for different splats shapes and sizes
         int randomValue = Random.Range(0, splats.Length - 1);
 
+        //Spawns the splat at the collision position
         var splat = Instantiate(splats[randomValue], _point, Quaternion.identity);
 
+        //Sends the collision postion to the newly created splat
         var setUp = splat.GetComponent<OrientSplat>();
 
         setUp.SetUp(_point, this);
@@ -24,11 +26,11 @@ public class SpawnSplat : MonoBehaviour
 
     public void addSplat(GameObject splat)
     {
-        spawnedSplats.Add(splat);
-        if(spawnedSplats.Count > m_maxSplats)
+        m_spawnedSplats.Add(splat);
+        if(m_spawnedSplats.Count > m_maxSplats)
         {
-            var firstSplat = spawnedSplats[0];
-            spawnedSplats.Remove(firstSplat);
+            var firstSplat = m_spawnedSplats[0];
+            m_spawnedSplats.Remove(firstSplat);
             Destroy(firstSplat);
         }
     }

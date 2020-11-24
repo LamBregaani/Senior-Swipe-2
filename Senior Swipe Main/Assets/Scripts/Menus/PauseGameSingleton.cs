@@ -21,6 +21,7 @@ public class PauseGameSingleton : MonoBehaviour
             instance = this;
     }
 
+    
 
     public void Pause()
     {
